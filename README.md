@@ -12,7 +12,7 @@
 <hr />
 
 ### 배포 URL
-[포트폴리오 바로가기](https://alotus.vercel.app/)
+[포트폴리오 바로가기](https://aryeon.vercel.app)
 
 <hr />
 
