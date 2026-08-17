@@ -4,19 +4,29 @@ type Imgs = {
 };
 
 type Tasks = {
-  taskTitle: string;
-  taskEpxlain: string[];
+  title?: string;
+  epxlain: string[];
+};
+
+export type caseStudies = {
+  title: string;
+  description?: string | null;
+  problem: string[];
+  approach?: string[] | null;
+  implementation: string[] | Tasks[];
+  result?: string[] | null;
 };
 
 export type TWorks = {
   id: string;
   title: string;
-  explain?: string;
-  responsive?: string;
-  members?: string;
+  explain?: string | null;
+  responsive?: string | null;
+  members?: string | null;
   startDate: string;
   endDate: string;
   imgs: Imgs[];
-  skills?: string;
+  skills?: string | null;
   tasks: Tasks[];
+  caseStudy?: caseStudies[] | null;
 };

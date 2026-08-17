@@ -27,8 +27,11 @@ const WorkList = ({ id, title, startDate, endDate, imgs, tasks }: TWorks) => {
       </div>
       <ul className="flex flex-col gap-0.5">
         {tasks.map((task, idx) => (
-          <li key={id + "task" + idx} className="relative pl-2 text-sm text-gray-600">
-            <span className="absolute left-0">·</span> {task.taskTitle}
+          <li
+            key={id + "task" + idx}
+            className="relative pl-2 text-sm text-gray-600"
+          >
+            <span className="absolute left-0">·</span> {task.title}
           </li>
         ))}
       </ul>

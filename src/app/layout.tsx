@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="">
+      <body className="cursor-default">
         {children}
         {modal}
       </body>

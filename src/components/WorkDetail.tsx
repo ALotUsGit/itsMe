@@ -1,12 +1,13 @@
-import { TWorks } from "@/app/types/works-type";
+import { caseStudies, TWorks } from "@/app/types/works-type";
 import works from "../../public/works.json";
 import ImageList from "./image/ImageList";
 import Link from "next/link";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import CaseItem from "./CaseItem";
 
 type Task = {
-  taskTitle: string;
-  taskEpxlain: string[];
+  title: string;
+  epxlain: string[];
 };
 
 type ImgType = { previewId: string; src: string };
@@ -54,27 +55,25 @@ const WorkDetail = ({ id }: Props) => {
       {work?.skills !== "" && (
         <div>
           <h3 className="mb-4 text-lg/none font-medium text-primary">
-            사용 기술 및 언어
+            개발환경
           </h3>
           <p className="text-gray-600">{work?.skills}</p>
         </div>
       )}
 
       <div>
-        <h3 className="mb-4 text-lg/none font-medium text-primary">
-          주요 역할
-        </h3>
+        <h3 className="mb-4 text-lg/none font-medium text-primary">주요성과</h3>
         {work?.tasks.map((task: Task, idx: number) => (
           <div key={work.id + idx} className="mb-6">
             <h4 className="mb-2 text-lg font-semibold">
               <span className="mr-3 text-xl">
                 {(idx + 1).toString().padStart(2, "0")}
               </span>
-              {task.taskTitle}
+              {task.title}
             </h4>
-            {task.taskEpxlain.length > 0 && (
-              <ul className="pl-12 flex flex-col gap-y-2">
-                {task.taskEpxlain.map((explain: string, idx: number) => (
+            {task.epxlain.length > 0 && (
+              <ul className="flex flex-col gap-y-2 pl-12">
+                {task.epxlain.map((explain: string, idx: number) => (
                   <li
                     key={"taskDesc" + idx}
                     className="list-disc whitespace-pre-wrap text-gray-600"
@@ -87,6 +86,29 @@ const WorkDetail = ({ id }: Props) => {
           </div>
         ))}
       </div>
+
+      {work && work.caseStudy && (
+        <div>
+          <h3 className="mb-4 text-lg/none font-medium text-primary">
+            설계 및 문제해결
+          </h3>
+          {work.caseStudy.map((item: caseStudies, idx: number) => (
+            <div key={"CASE" + work.id + idx} className="mb-10">
+              <h4 className="mb-2 text-lg font-semibold">{item.title}</h4>
+
+              {item.description && <p>{item.description}</p>}
+
+              <CaseItem title="문제" data={item.problem} />
+
+              {item.approach && <CaseItem title="접근" data={item.approach} />}
+
+              <CaseItem title="구현" data={item.implementation} />
+
+              {item.result && <CaseItem title="결과" data={item.result} />}
+            </div>
+          ))}
+        </div>
+      )}
 
       <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {work?.imgs.map(({ previewId, src }: ImgType) => (

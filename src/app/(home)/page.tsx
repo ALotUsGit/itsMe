@@ -5,27 +5,16 @@ import mainImg from "../../../public/images/main.png";
 import me from "../../../public/images/me.png";
 import WorkList from "@/components/WorkList";
 import works from "../../../public/works.json";
-import Link from "next/link";
-import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import { TWorks } from "../types/works-type";
 
 const skills = [
-  { category: "dev", name: "HTML" },
-  { category: "dev", name: "CSS" },
-  { category: "dev", name: "SCSS" },
   { category: "dev", name: "Typescript" },
   { category: "dev", name: "Javascript" },
-  { category: "dev", name: "Jquery" },
   { category: "dev", name: "Next.JS" },
   { category: "dev", name: "React" },
-  { category: "dev", name: "Vue" },
-  { category: "dev", name: "Github" },
   { category: "dev", name: "Tailwind css" },
   { category: "dev", name: "Styled Component" },
-  { category: "dev", name: "vuetify" },
   { category: "design", name: "Figma" },
-  { category: "design", name: "Photoshop" },
-  { category: "design", name: "Illustrator" },
 ];
 
 export default function Home() {
@@ -38,16 +27,16 @@ export default function Home() {
         </h1>
         <ul className="flex flex-col gap-4 md:gap-9">
           <li className="font-medium text-gray-400 md:text-2xl/none">
-            유지보수 고려
+            서비스 전 영역 UI/UX 설계 및 프론트엔드 개발 총괄
           </li>
           <li className="font-medium text-gray-400 md:text-2xl/none">
-            대시보드 제작
+            레거시 프로젝트 이관
           </li>
           <li className="font-medium text-gray-400 md:text-2xl/none">
-            git 활용한 협업 경험
+            WebView 기반 차량 관리 서비스 개발
           </li>
           <li className="font-medium text-gray-400 md:text-2xl/none">
-            Next.JS, React, Vue 프로젝트 경험
+            기획/백엔드/운영팀과의 커뮤니케이션을 통한 시스템 UI/UX 개선
           </li>
         </ul>
         <Image
@@ -55,14 +44,6 @@ export default function Home() {
           alt="메인 이미지"
           className="absolute left-0 top-0 -z-10 h-full object-cover"
         />
-
-        <Link
-          href="https://github.com/ALotUsGit"
-          target="_blank"
-          className="absolute right-6 top-12 flex items-center gap-2 font-medium text-gray-400 transition-colors hover:text-gray-300 md:right-28 md:top-20"
-        >
-          Github <ArrowUpRightIcon className="size-4" />
-        </Link>
       </section>
 
       <section className="mx-auto flex max-w-screen-xl flex-wrap gap-x-28 gap-y-4 px-6 py-10 md:px-4 md:py-20">
@@ -79,7 +60,7 @@ export default function Home() {
           </div>
           <h3 className="mb-4 text-lg font-semibold">Contact</h3>
           <ul className="flex flex-col gap-2">
-            <li>+82 10-2266-5953</li>
+            <li>010-2266-5953</li>
             <li>arjeon.career@gmail.com</li>
           </ul>
         </div>
@@ -87,8 +68,7 @@ export default function Home() {
         <div className="flex flex-1 flex-col gap-10">
           <div>
             <p className="mb-6">
-              빠르게 변해가는 사회 속에서 다양한 경험을 통해 개인 역량을 더욱
-              발전시키고자 노력합니다.
+              사용자가 어떻게 사용할지 고민하고 더 나은 경험을 설계합니다.
             </p>
             <div className="flex flex-wrap gap-x-1 gap-y-2">
               {skills.map((skill) => (
@@ -107,30 +87,36 @@ export default function Home() {
 
           <ul className="flex flex-col gap-2">
             <li className="relative pl-2">
-              <span className="absolute left-0">·</span> 유지보수가 편리한
-              코드를 작성하기 위해 노력합니다.
+              <span className="absolute left-0">·</span> 운영 시스템 중심 관리자
+              UI 설계 및 구현
             </li>
             <li className="relative pl-2">
-              <span className="absolute left-0">·</span> 대시보드 제작 경험을
-              통해 다양한 상황에 유연한 대응이 가능합니다.
+              <span className="absolute left-0">·</span> 프론트엔드 단독 담당
+              환경에서 서비스 UI 아키텍처 설계
             </li>
             <li className="relative pl-2">
-              <span className="absolute left-0">·</span> 홈페이지 운영 PM 경험이
-              있어 커뮤니케이션에 익숙합니다.
+              <span className="absolute left-0">·</span> 레거시
+              환경(Mustache)에서 신규 기능 개발 및 개선
             </li>
             <li className="relative pl-2">
-              <span className="absolute left-0">·</span> git을 활용한 협업
-              경험이 있습니다.
+              <span className="absolute left-0">·</span> 운영/CS팀과 협업하여
+              관리자 UX 개선
             </li>
             <li className="relative pl-2">
-              <span className="absolute left-0">·</span> Next.JS, React, Vue를
-              활용한 프로젝트 경험이 있습니다.
+              <span className="absolute left-0">·</span> React 기반 CMS 전환
+              프로젝트
             </li>
           </ul>
 
           <div>
             <h3 className="mb-4 text-lg font-semibold">Career</h3>
             <ul className="flex flex-col gap-2">
+              <li className="relative pl-2">
+                <span className="absolute left-0">·</span> 아파트허브 (2025.01 ~
+                재직 중, 프론트엔드 개발)
+                <br />
+                사용기술 : Javascript, jQuery, Mustache, React
+              </li>
               <li className="relative pl-2">
                 <span className="absolute left-0">·</span>{" "}
                 한국직무능력평가연구소 (2023.02 ~ 2024.05, 웹퍼블리셔)
@@ -180,6 +166,7 @@ export default function Home() {
               endDate={work.endDate}
               imgs={work.imgs}
               tasks={work.tasks}
+              caseStudy={work.caseStudy}
             />
           ))}
         </div>
