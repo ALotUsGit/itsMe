@@ -27,7 +27,7 @@ export default function Home() {
         </h1>
         <ul className="flex flex-col gap-4 md:gap-9">
           <li className="font-medium text-gray-400 md:text-2xl/none">
-            서비스 전 영역 UI/UX 설계 및 프론트엔드 개발 총괄
+            서비스 전반 UI/UX 설계 및 프론트엔드 개발 담당
           </li>
           <li className="font-medium text-gray-400 md:text-2xl/none">
             레거시 프로젝트 이관
